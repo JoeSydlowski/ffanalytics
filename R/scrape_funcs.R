@@ -43,7 +43,7 @@ scrape_data <- function(
 
   if(any(names(src_data) == "IDP")){
     idp_data <- filter(src_data$IDP, data_src == "NumberFire") %>%
-      split(.$pos)
+      split(.$position)
     for(p in names(idp_data)){
       src_data[[p]] <- bind_rows(list(src_data[[p]], idp_data[[p]]))
     }
